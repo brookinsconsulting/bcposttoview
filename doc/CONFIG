@@ -1,0 +1,57 @@
+BC Post To View extension CONFIG
+
+This document is a general configuration guide to the BC Post To View extension settings
+
+BC Post To View Extension Settings
+======================================
+
+1. Default Extension Settings
+   --------------------------
+
+   Upon installing and activating the extension, one may need to alter these configuration settings.
+
+   File: bcposttoview/settings/module.ini.append.php
+
+   <?php /* #?ini charset="iso-8859-1"?
+
+   [ModuleSettings]
+   ExtensionRepositories[]=bcposttoview
+   # Provided Modules
+   ModuleList[]=posttoview
+   ModuleList[]=defaultfilter
+   ModuleList[]=customfilter01
+   ModuleList[]=customfilter02
+   # ModuleList[]=customfilter03
+   # ModuleList[]=customfilter04
+
+   */ ?>
+
+   File: bcposttoview/settings/site.ini.append.php
+
+   <?php /* #?ini charset="iso-8859-1"?
+
+   [RoleSettings]
+   PolicyOmitList[]=posttoview
+   PolicyOmitList[]=defaultfilter
+   PolicyOmitList[]=customfilter01
+   PolicyOmitList[]=customfilter02
+
+   */ ?>
+
+2. Requirements
+   ------------
+      For more information on this subject please see doc/INSTALL
+
+2.1 Installing extension
+    --------------------
+
+2.4 Required Settings Modifications
+    -------------------------------
+
+2.4.1 ModuleList
+      ------
+      First you must may need to modify the ModuleList[] settings to meet your own needs.
+
+2.4.2 PolicyOmitList
+      ------
+      First you must may need to modify the PolicyOmitList[] settings to meet your own needs.

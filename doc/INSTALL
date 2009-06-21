@@ -1,0 +1,121 @@
+BC Post To View extension INSTALL
+
+Installation
+============
+
+1. Getting eZ publish
+   ------------------
+
+   You can download a version of eZ publish from ez.no,
+   you will find the various versions at:
+
+   http://ez.no/download/ez_publish/ez_publish_4_stable_releases
+
+   Note: You will require eZ publish 4.0.3 or higher
+
+   Information on the installation of eZ publish can be found at:
+   
+   http://ez.no/products/ez_publish_cms/documentation/installation
+   and
+   http://ez.no/doc
+
+
+2. Installing BC Post To View extension package
+   ---------------------------------------------
+
+   1. Copy the package into the `extension' directory
+   in the root of your eZ publish installation.
+
+   2. Unpack the files in the distribution. The command
+   necessary is depends on the file you downloaded.
+
+   [Tar.gz]:
+   $ tar -zxvf bcposttoview.tar.gz
+
+   [zip]:
+   $ unzip bcposttoview.tar.zip
+
+
+3. Activate BC Post To View extension
+   -------------------------------------------
+
+   We must now enable the extension in eZ publish.
+
+   You must enable the bcposttoview extension *above*
+   ezwebin design extension in order for all features to function properly.
+
+   To do this edit site.ini.append(.php) in the folder
+   root_of_ezpublish/settings. If this file does not exist;
+   create it. Locate (or add) the block
+
+   [ExtensionSettings] and add the line:
+   ActiveExtensions[]=bcposttoview
+
+   If you run several sites using only one distribution
+   and only some of the sites should use the extension,
+   make the changes in the override file of that siteaccess.
+
+   E.g root_of_ezpublish/settings/siteaccess/news/site.ini.append(.php)
+   But instead of using ActiveExtensions you must add these lines instead:
+
+   [ExtensionSettings]
+   ActiveAccessExtensions[]=bcposttoview
+
+
+Configuration
+=============
+
+4. Configuration of BC Post To View extension
+   ----------------------------------------------
+
+   The configuration of the BC Post To View extension settings is optional.
+   For details on configuring BC Post To View extension settings,
+   please read the file doc/CONFIG.
+
+5. Usage: Custom HTTP Post variable to view parameter conversion for your web site.
+   ---------------------------------------------------------------------------
+
+   If you need custom php rules for http post variable to view parameter conversion and redirection then please follow these instructions.
+
+   If however you only need to use form controls to submit http post variables which need to be converted to view parameters and redirected to destination with clean view parameters and mostly default logic then please disregard the following instructions and use one of the default provided module views.
+
+5.1 Enable Extension
+
+    A) Simply enable this extension in your eZ Publish installation.
+
+    B) Clear All Cache via both the administration gui and cli script.
+
+    C) After you have followed all these steps, the extension's
+       workflow settings should be activated, configured and functioning properly.
+
+5.2 Configure Extension Settings
+
+    A) Add or remove modules enabled settings in 'extension/bcposttoview/settings/module.ini.append.php'.
+
+    B) Add or remove modules policy omit settings in 'extension/bcposttoview/settings/site.ini.append.php'.
+
+5.3 Configure Template HTML Form to post to one of the provided custom module views
+
+6.0 Review
+
+      Test. Test to ensure you installation has successfully enabled the related modifications (dependencies)
+
+      Review. Review the source code output to ensure the page and order tracking features are enabled correctly.
+
+      Reconfirm. Reconfirm the correct and successful installation of the settings.
+
+      Clear All Caches. Be certain to clear all caches. Both within 
+      - the eZ Publish Administration > Setup > Cache 
+      - and via shell comandline # ./bin/php/ezcache.php --clear-all
+
+
+Troubleshooting
+===============
+
+1. Support
+   -------
+
+   If you have find any problems not handled by this document or the FAQ you
+   can contact Brookins Consulting through the support system:
+
+   http://brookinsconsulting.com/contact
